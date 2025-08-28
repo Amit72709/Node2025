@@ -1,0 +1,12 @@
+const http = require('http');
+const userForm = require('./userForm');
+http.createServer((req,resp)=>{
+    resp.writeHead(200,{"content-type":'text/html'})
+    if(req.url==="/"){
+    userForm(req,resp);
+    }
+  else if(req.url==="/submit"){
+    resp.write("anil sidhu")
+  }
+    resp.end();
+}).listen(5300)
